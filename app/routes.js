@@ -8,12 +8,13 @@ module.exports = function(app){
         connection.end();
 
 };
-    
-    app.get('/form', function(req,res){
-        res.render('/produto',listaProdutos);
+    app.get('/produtos',listaProdutos);
+
+    app.get('produtos/form', function(req,res){
+        app.render('produtos/form');
     });
 
-    app.post('/produtos/salvar',function(req,res){
+    app.post('/produtos',function(req,res){
 
         var produto = req.body;
 
